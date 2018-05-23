@@ -14,14 +14,14 @@ module.exports = function (sequelize, DataTypes) {
 
 
 //------------------------------------------
-// staff.associate = function(models) {
+staff.associate = function(models) {
    
-//     staff.belongsTo(models.booking, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
+    staff.belongsTo(models.booking, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return staff;
 };

@@ -12,11 +12,12 @@ app.use(bodyParser.json());
 
 app.use(express.static("public"));
 //----------------------------------------------
-
+require("./routes/html-routes.js")(app);
 require("./routes/booking-routes.js")(app);
 require("./routes/staff-routes.js")(app);
 require("./routes/patient-routes.js")(app);
 require("./routes/department-routes.js")(app);
+
 
 
 

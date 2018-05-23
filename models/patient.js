@@ -17,14 +17,14 @@ module.exports = function (sequelize, DataTypes) {
 
 //----------------------------------------------
 
-// patient.associate = function(models) {
+patient.associate = function(models) {
    
-//     patient.belongsTo(models.booking, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
+    patient.belongsTo(models.booking, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return patient;
 };
