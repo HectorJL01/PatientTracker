@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   db.staff.findAll({
     where: query,
-    // include: [db.booking]
+    include: [db.booking]
   }).then(function(dbstaff) {
     res.json(dbstaff);
   });
@@ -22,10 +22,16 @@ db.staff.findOne({
     where: {
       id: req.params.id
     },
-    // include: [db.booking]
+    include: [db.booking]
   }).then(function(dbstaff) {
     res.json(dbstaff);
   });
 });
-
+//----------------------------------------------------
+app.post("/api/staff", function(req, res) {
+  db.staff.create(req.body)
+  .then(function(staff) {
+    res.json(staff);
+  });
+});
 }

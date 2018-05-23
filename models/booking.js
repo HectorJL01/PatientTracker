@@ -27,18 +27,18 @@
 
 
  //---------------------------------------------
-//  booking.associate = function(models) {
+ booking.associate = function(models) {
 
-//     booking.hasMany(models.patient, {
-//       onDelete: "cascade"
-//     });
-//     booking.hasMany(models.staff, {
-//         onDelete: "cascade"
-//       });
-//       booking.hasMany(models.department, {
-//         onDelete: "cascade"
-//       });
-//   };
+    booking.hasMany(models.patient, {
+      onDelete: "cascade"
+    });
+    booking.hasMany(models.staff, {
+        onDelete: "cascade"
+      });
+      booking.hasMany(models.department, {
+        onDelete: "cascade"
+      });
+  };
 
   return booking;
 };

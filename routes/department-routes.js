@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   db.department.findAll({
     where: query,
-    // include: [db.booking]
+    include: [db.booking]
   }).then(function(dbdepartment) {
     res.json(dbdepartment);
   });
@@ -21,9 +21,16 @@ db.department.findOne({
     where: {
       id: req.params.id
     },
-    // include: [db.booking]
+    include: [db.booking]
   }).then(function(dbdepartment) {
     res.json(dbdepartment);
+  });
+});
+//--------------------------------------------
+app.post("/api/department", function(req, res) {
+  db.department.create(req.body)
+  .then(function(department) {
+    res.json(department);
   });
 });
 
