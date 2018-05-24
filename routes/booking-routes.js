@@ -10,6 +10,24 @@ module.exports = function(app) {
       });
     });
 //------------------------------------------------------
+// app.get("/api/booking", function(req, res) {
+     
+//   db.booking.findAll({
+//     include: [ db.staff]
+//   }).then(function(booking) {
+//     res.json(booking);
+//   }); 
+// });
+//--------------------------------------------
+// app.get("/api/booking", function(req, res) {
+     
+//   db.booking.findAll({
+//     include: [ db.department]
+//   }).then(function(booking) {
+//     res.json(booking);
+//   });
+// });
+//---------------------------------------------------
 
 app.get("/api/booking/:id", function(req, res) {
 

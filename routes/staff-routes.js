@@ -15,6 +15,7 @@ module.exports = function(app) {
     res.json(dbstaff);
   });
 });
+
 //--------------------------------------------------
 app.get("/api/staff/:id", function(req, res) {
 db.staff.findOne({
@@ -34,4 +35,5 @@ app.post("/api/staff", function(req, res) {
     res.json(staff);
   });
 });
+
 }
