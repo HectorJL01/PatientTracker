@@ -16,12 +16,12 @@
          start_time: {
              type: DataTypes.DATE,
              allowNull: false,
-             // defaultValue: Sequelize.NOW
+            //  defaultValue: Sequelize.NOW
          },
          end_time: {
              type: DataTypes.DATE,
              allowNull: false,
-             // defaultValue: Sequelize.NOW
+            //   defaultValue: Sequelize.NOW
          }
      });
 
