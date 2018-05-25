@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS patienttrack_db;
+DROP DATABASE IF EXISTS patientrack_db;
 CREATE DATABASE patientrack_db;
 
 
