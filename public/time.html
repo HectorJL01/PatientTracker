@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <!-- <p id="button"> Click me </p> -->
+
+        <!-- <p id="buttonTime"></p> -->
+<div id="display">Booked Time</div>
+<div id="buttons"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    var timeList = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30"];
+    var main = $("body");
+    var btns = main.find("#buttons");
+
+    // var booking = Sequelize.define("patientrack_db", {
+    //     patient_id: {type: Sequelize.integer},
+
+
+    // })
+    // var bookedtime = "";
+    // var timesinarrayv = [];
+
+   
+    for (var i = 0; i < timeList.length; i++){
+        
+        var timeBtn = $("<button>");
+
+        timeBtn.addClass("time-button");
+        timeBtn.attr("data-time", timeList[i]);
+        timeBtn.text(timeList[i]);
+        btns.append(timeBtn);
+    }
+
+    btns.on("click", ".time-button", function (){
+        var bookedtime = $("<div>");
+            bookedtime.addClass("time");
+            bookedtime.text($(this).attr("data-time"));
+            main.find ("#display").append(bookedtime);
+        
+    })
+    
+    module.exports = function(sequelize, DataTypes) {
+    var bookings = sequelize.define("bookings", {
+    start_time: {
+      type: datetime.STRING,
+      allowNull: false,
+      validate: {
+        min:1,
+        max:23.
+      }
+    },
+
+  });
+
+  Post.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Post.belongsTo(models.booking.js, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  return Post;
+};
+
+
+
+
+
+    })
+    
+</script>
+
+</body>
+</html>
