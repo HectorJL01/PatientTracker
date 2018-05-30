@@ -19,69 +19,86 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- <div class="jumbotron">
-            <h1> Patient Booking </h1>
-            <h3> xxxx </h3>
-            <hr>
-            <a href="/" class="btn btn-danger btn-lg">
-                <span class="fa fa-eye"></span> Patients Info </a>
-            <a href="/add" class="btn btn-danger btn-lg">
-                <span class="fa fa-plus"></span> Information </a>
-            <a href="/all" class="btn btn-danger btn-lg">
-                <span class="fa fa-th-list"></span> New Booking </a>
-            <a href="/long" class="btn btn-danger btn-lg">
-                <span class="fa fa-th-list"></span> Available Time </a>
-            <a href="/short" class="btn btn-danger btn-lg">
-                <span class="fa fa-th-list"></span> Booked Time </a>
-        </div> -->
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <strong> Search for a Patient </strong>
-                        </h3>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <strong> Search for a Patient </strong>
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <form action="" method="POST" role="form">
+                    <div class="form-group">
+                        <label for=""> Patient's Name </label>
+                        <input type="text" class="form-control" id="patientname" placeholder="">
                     </div>
-
-                    <div class="card-body">
-                        <form action="" method="POST" role="form">
-                            <div class="form-group">
-                                <label for=""> Patient's Name </label>
-                                <input type="text" class="form-control" id="patientname" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for=""> Staff Name </label>
-                                <input type="text" class="form-control" id="staff" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for=""> Department </label>
-                                <input type="text" class="form-control" id="department" placeholder="">
-                            </div> 
-                            <div class="form-group">
-                                <label for=""> Start Time </label>
-                                <input type="text" class="form-control" id="starttime" placeholder="">
-                            </div> 
-                            <div class="form-group">
-                                <label for=""> End Time </label>
-                                <input type="text" class="form-control" id="endtime" placeholder="">
-                            </div> 
-                        </form>
+                    <div class="form-group">
+                        <label for=""> Staff Name </label>
+                        <input type="text" class="form-control" id="staff" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Department </label>
+                        <input type="text" class="form-control" id="department" placeholder="">
                     </div> 
-                        <br>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-                                <span class="fa fa-book"></span> Seach </button>
-                        </div>
-                    </div>
+                    <div class="form-group">
 
-                </div>
+                        <div id="display">Book a Time</div>
+                        <div id="buttons"></div>
+
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        
+                <script type="text/javascript">
+                    $(document).ready(function(){
+
+                    var timeList = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30"];
+                    var main = $("body");
+                    var btns = main.find("#buttons");
+
+                    for (var i = 0; i < timeList.length; i++){
+                        
+                        var timeBtn = $("<button>");
+
+                        timeBtn.addClass("time-button");
+                        timeBtn.attr("data-time", timeList[i]);
+                        timeBtn.text(timeList[i]);
+                        btns.append(timeBtn);
+                    }
+
+                    btns.on("click", ".time-button".disable = true, function (){
+                        var bookedtime = $("<div>");
+                            bookedtime.addClass("time");
+                            bookedtime.text($(this).attr("data-time"));
+                            main.find ("#display").append(bookedtime);
+                            document.getElementById("#buttons").disable = true;
+                        
+                    })
+
+
+                    })
+                    
+                </script>
+
+        </div> 
+
+            </form>
+        </div> 
+            <br>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-md" id="add-btn">
+                    <span class="fa fa-book"></span> Seach </button>
             </div>
         </div>
 
     </div>
+</div>
+</div>
+
+</div>
 
     <!-- Custom Script -->
     <script src="js/add.js" type="text/javascript"></script>

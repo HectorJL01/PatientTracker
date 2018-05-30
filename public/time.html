@@ -8,9 +8,7 @@
 </head>
 <body>
 
-        <!-- <p id="button"> Click me </p> -->
 
-        <!-- <p id="buttonTime"></p> -->
 <div id="display">Booked Time</div>
 <div id="buttons"></div>
 
@@ -23,15 +21,6 @@
     var main = $("body");
     var btns = main.find("#buttons");
 
-    // var booking = Sequelize.define("patientrack_db", {
-    //     patient_id: {type: Sequelize.integer},
-
-
-    // })
-    // var bookedtime = "";
-    // var timesinarrayv = [];
-
-   
     for (var i = 0; i < timeList.length; i++){
         
         var timeBtn = $("<button>");
@@ -47,39 +36,21 @@
             bookedtime.addClass("time");
             bookedtime.text($(this).attr("data-time"));
             main.find ("#display").append(bookedtime);
-        
+            document.getElementById(".time-button").disable = true;
+ 
     })
-    
-    module.exports = function(sequelize, DataTypes) {
-    var bookings = sequelize.define("bookings", {
-    start_time: {
-      type: datetime.STRING,
-      allowNull: false,
-      validate: {
-        min:1,
-        max:23.
+
+    })
+
+    $.get("/api/booking", function(btns) {
+      for(var i = 0; i < btns.length; i++) {
+        var starTime = $("<div>");
+          starTime.addClass("buttons");
+          starTime.attr("id", "startime" + i);
+          $("#buttons-startime").append(starTime);
+
+          $("#startime" + i).append("<h3>Start time : " + btns[i].start_time + "</h4>");
       }
-    },
-
-  });
-
-  Post.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Post.belongsTo(models.booking.js, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  return Post;
-};
-
-
-
-
-
     })
     
 </script>
