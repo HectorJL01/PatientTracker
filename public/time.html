@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div id="display">Booked Time</div>
+<div id="buttons"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    var timeList = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30"];
+    var main = $("body");
+    var btns = main.find("#buttons");
+
+    for (var i = 0; i < timeList.length; i++){
+        
+        var timeBtn = $("<button>");
+
+        timeBtn.addClass("time-button");
+        timeBtn.attr("data-time", timeList[i]);
+        timeBtn.text(timeList[i]);
+        btns.append(timeBtn);
+    }
+
+    btns.on("click", ".time-button", function (){
+        var bookedtime = $("<div>");
+            bookedtime.addClass("time");
+            bookedtime.text($(this).attr("data-time"));
+            main.find ("#display").append(bookedtime);
+            document.getElementById(".time-button").disable = true;
+ 
+    })
+
+    })
+
+    $.get("/api/booking", function(btns) {
+      for(var i = 0; i < btns.length; i++) {
+        var starTime = $("<div>");
+          starTime.addClass("buttons");
+          starTime.attr("id", "startime" + i);
+          $("#buttons-startime").append(starTime);
+
+          $("#startime" + i).append("<h3>Start time : " + btns[i].start_time + "</h4>");
+      }
+    })
+    
+</script>
+
+</body>
+</html>
