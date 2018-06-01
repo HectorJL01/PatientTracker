@@ -24,10 +24,6 @@ $("#add-btn").on("click", function(event) {
      
       });
   
-    // Empty each input box by replacing the value with an empty string
-    // $("#patientname").val("");
-    // $("#room").val("");
-    // $("#staff").val("");
-    // $("#time").val("");
+
   
   });

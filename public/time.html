@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,21 +39,27 @@
             document.getElementById(".time-button").disable = true;
  
     })
+            $(".time-button").on("click", function(event) {
+            event.preventDefault();
+          
+            // Make a new patient information object
+            var newInformation = {
+              patient_id: $("#patientname").val().trim(),
+              staff_name: $("#staff").val().trim(),
+              department_name: $("#department").val().trim(),
+              start_time: $("#starttime").val().trim(),
+              end_time: $("#endtime").val().trim()
+            };
+          
+          
 
+          
+          });
     })
 
-    $.get("/api/booking", function(btns) {
-      for(var i = 0; i < btns.length; i++) {
-        var starTime = $("<div>");
-          starTime.addClass("buttons");
-          starTime.attr("id", "startime" + i);
-          $("#buttons-startime").append(starTime);
 
-          $("#startime" + i).append("<h3>Start time : " + btns[i].start_time + "</h4>");
-      }
-    })
     
 </script>
 
 </body>
-</html>
+</html> -->
