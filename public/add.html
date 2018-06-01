@@ -22,14 +22,50 @@
     <div class="container">
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <strong> Book a time for your patient </strong>
-                        </h3>
+
+                    <div class="card-body">
+                        <form action="" method="POST" role="form">
+                            <div class="form-group">
+                                <label for=""> Patient's Name </label>
+                                <input type="text" class="form-control" id="patientname" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for=""> Staff Name </label>
+                                <input type="text" class="form-control" id="staff" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for=""> Department </label>
+                                <input type="text" class="form-control" id="department" placeholder="">
+                            </div> 
+                            <div class="form-group">
+                                <label for=""> Start Time </label>
+                                <input type="text" class="form-control" id="starttime" placeholder="">
+                            </div> 
+                            <div class="form-group">
+                                <label for=""> End Time </label>
+                                <input type="text" class="form-control" id="endtime" placeholder="">
+                            </div> 
+                        </form>
+                    </div> 
+
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="add-btn">
+                                <span class="fa fa-book"></span> ADD </button>
+                        </div>
                     </div>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <strong> Search for a Patient </strong>
+                </h3>
+            </div>
+
 
                     <div class="card-body">
                         <form action="" method="POST" role="form">
