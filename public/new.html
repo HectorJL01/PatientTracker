@@ -7,6 +7,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title> Booking New Patient </title>
+            <link rel="stylesheet" href="css/style.css">
         
             <!-- bootstrap -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -20,7 +21,7 @@
         
         <body>
         
-            <div class="container">
+            <div class="container" style="margin-top: 30px;">
         
                 <!-- <div class="jumbotron">
                     <h1> Patient Booking </h1>
@@ -37,18 +38,31 @@
                     <a href="/short" class="btn btn-danger btn-lg">
                         <span class="fa fa-th-list"></span> Booked Time </a>
                 </div> -->
-        
-                <div class="row">
+                <div class="jumbotron"  style="background-color:#3d8fe0" >
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
+                            <div class="card-header"> -->
+
+                                    <ul class="nav justify-content">
+                                            <li class="nav-item">
+                                              <a class="nav-link " href="/" style="color: aliceblue">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" href="/add"style="color: aliceblue">Booking</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" href="/new" style="color: aliceblue">New Patient</a>
+                                            </li>
+                                          
+                                          </ul>
+                                <h3  class="text-center" >
                                     <strong> Book A New Patient </strong>
                                 </h3>
-                            </div>
+                            
         
-                            <div class="card-body">
-                                <form action="" method="POST" role="form">
+                            <div class="card-body" >
+                                <form action="/" method="POST" role="form">
                                     <div class="form-group">
                                         <label for=""> Patient ID </label>
                                         <input type="text" class="form-control" id="patientid" placeholder="">
@@ -73,19 +87,21 @@
                                         <input type="text" class="form-control" id="department" placeholder="">
                                     </div> 
                                     <div class="form-group">
-                                        <label for=""> Start Time </label>
-                                        <input type="text" class="form-control" id="starttime" placeholder="">
+                                        <label for="party">Enter start a date and time for your booking:</label>
+                                        <!-- <input type="text" class="form-control" id="starttime" placeholder=""> -->
+                                        <input id="party" type="datetime-local" name="partydate" value="2018-06-02T11:30" class="form-control">
                                     </div> 
                                     <div class="form-group">
-                                        <label for=""> End Time </label>
-                                        <input type="text" class="form-control" id="endtime" placeholder="">
+                                        <label for="party">Enter end a date and time for your booking:</label>
+                                        <!-- <input type="text" class="form-control" id="endtime" placeholder=""> -->
+                                        <input id="party" type="datetime-local" name="partydate" value="2018-06-02T11:30" class="form-control">
                                     </div> 
                                 </form>
                             </div> 
                                 <br>
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-                                        <span class="fa fa-book"></span> Seach </button>
+                                        <span class="fa fa-book"></span> add new patient </button>
                                 </div>
                             </div>
         

@@ -1,21 +1,47 @@
-$.get("/api/booking", function(data) {
-    // For each patient that our server sends us back
-    for (var i = 0; i < data.length; i++) {
-      // Create a parent div to hold  data
-      var patientInfo = $("<div>");
-      // Add a class to this div: 'well'
-      patientInfo.addClass("well");
-      // Add an id to the well to mark which well it is
-      patientInfo.attr("id", "patientid" + i);
-      // Append the well to the well section
-      $("#well-patientinfo").append(patientInfo);
-  
-      // Now  we add our patient data to the well we just placed on the page
-      $("#patientid" + i).append("<h2>" + (i + 1) + ". " + data[i].patient_id + "</h2>");
-      $("#patientid" + i).append("<h3>Name: " + data[i].staff_name+ "</h4>");
-      $("#patientid" + i).append("<h3>Department: " + data[i].department_name + "</h4>");
-      $("#patientid" + i).append("<h3>Start time : " + data[i].start_time + "</h4>");
-      $("#patientid" + i).append("<h3>End time: " + data[i].end_time + "</h4>");
 
-    }
+
+$("#search-btn").on("click", function(event) {
+  console.log("screch")
+  event.preventDefault();
+
+  var Searched= $("#patient-search").val().trim();
+
+  Searched = Searched.replace(/\s+/g, "").toLowerCase();
+
+console.log(Searched )
+
+  $.get("/api/booking/" + Searched, function(data) {
+
+    console.log(data);
+   
+    patientinfo(data);
   });
+
+function patientinfo(data){
+
+
+    $("#well-patientinfo").empty();
+   $("#well-patientinfo").show();
+
+  
+     
+      var patientInfo = $("<div>");
+      
+      patientInfo.addClass("well");
+      
+      patientInfo.attr("id", "patientid" );
+  
+      $("#well-patientinfo").append(patientInfo);
+ 
+      $("#patientid" ).append("<h2>id:" + Searched + "</h2>");
+      $("#patientid" ).append("<h2>patient_id:"  + data.patient_id + "</h2>");
+      $("#patientid" ).append("<h3>Name: " + data.patients[0].patient_name+ "</h4>");
+      $("#patientid" ).append("<h3>Department: " + data.department_name + "</h4>");
+      $("#patientid" ).append("<h3>Start time : " + data.start_time + "</h4>");
+      $("#patientid" ).append("<h3>End time: " + data.end_time + "</h4>");
+     
+}
+});
+//------------------------------------
+var dateControl = document.querySelector('input[type="datetime-local"]');
+dateControl.value = '2017-06-01T08:30';
