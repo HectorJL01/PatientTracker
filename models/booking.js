@@ -1,3 +1,4 @@
+ 
  module.exports = function (sequelize, DataTypes) {
      var booking = sequelize.define("booking", {
          patient_id: {
