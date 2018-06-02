@@ -50,12 +50,14 @@
 
                                 <div id="display">Book a Time</div>
 
-                                <!-- <div id="buttons"></div> -->
+                                <div id="buttons"class="btn" data-toggle="buttonss"></div>
+                                <label class="btn btn-primary"> 
+                                    
 
-                                <div id="buttons" class="btn" data-toggle="buttons">
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="hours" id="time" value="timeList"> Select a Time:
-                                    </label>
+                                </label>
+
+
+                                    
                                         <p id="timeselected"></p>
                                 </div>
 
@@ -77,23 +79,15 @@
                                                     input.attr("type", "radio");
                                                     input.attr("name", "hours");
                                                     input.attr("id", "time");
-
-                                            // added value to extract the information of time
-                                                    input.attr("value", "timeList");
-                      
+                                                   
+                                                    input.text(timeList[i]);
+                                                    input.val(timeList[i]);
+                                                    input.add(display);
                                                     label.text(timeList[i]);
                                                     label.append(input);
-                                                    btns.append(label);
+                                                    btns.append(label);                                              
                                                 }
-
-                                                // Onclick to get the data from the time radio button this function is in w3 in how to extract a value on a radio
-                                                function datafromradiobutton() {
-                                                        var x = document.getElementById("#time").value;
-                                                        document.getElementById("timeselected").innerHTML = x;
-                                                    }
-
-                                                // Onclick to get the infomation to the database
-
+                                                
                                                 $("book-btn").on("click", function (event) {
                                                     event.preventDefault();
 
@@ -114,6 +108,14 @@
 
                                                 });
                                             });
+                                            
+                                            function display() {
+                                                var x = document.getElementById("time").value;
+                                                alert("The value of the radio button is: " + x);
+                                                
+                                            }
+
+                                        
                                 </script>
 
                             </div>
